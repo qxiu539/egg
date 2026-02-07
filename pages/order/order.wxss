@@ -1,0 +1,134 @@
+page {
+  background: #f7f7f7;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 28rpx;
+  padding-bottom: 168rpx;
+  box-sizing: border-box;
+}
+
+.top-tabs {
+  display: flex;
+  border-radius: 20rpx;
+  background: #ffffff;
+  padding: 10rpx;
+  margin-bottom: 0;
+}
+
+.tab-item {
+  flex: 1;
+  text-align: center;
+  font-size: 34rpx;
+  line-height: 76rpx;
+  color: #666666;
+  border-radius: 14rpx;
+}
+
+.tab-item.is-active {
+  background: #111111;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.form-card {
+  background: #ffffff;
+  padding: 30rpx;
+  border-top: 2rpx solid #f1f1f1;
+}
+
+.module-title {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #111111;
+  line-height: 1.4;
+  padding-bottom: 22rpx;
+}
+
+.addon-group {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16rpx;
+}
+
+.addon-item {
+  display: flex;
+  align-items: center;
+  min-height: 98rpx;
+  border: 2rpx solid #e3e3e3;
+  border-radius: 14rpx;
+  padding: 16rpx;
+  box-sizing: border-box;
+  background: #fcfcfc;
+}
+
+.addon-item.is-selected {
+  border-color: #111111;
+  background: #f1f1f1;
+}
+
+.addon-item checkbox {
+  transform: scale(1.08);
+}
+
+.addon-texts {
+  display: flex;
+  flex-direction: column;
+  padding-left: 16rpx;
+}
+
+.addon-name {
+  font-size: 30rpx;
+  color: #111111;
+  line-height: 1.3;
+}
+
+.addon-price {
+  font-size: 26rpx;
+  color: #666666;
+  line-height: 1.3;
+}
+
+.phone-input {
+  width: 100%;
+  background: #f8f8f8;
+  border-radius: 12rpx;
+  min-height: 88rpx;
+  font-size: 32rpx;
+  color: #111111;
+  padding: 0 22rpx;
+  box-sizing: border-box;
+}
+
+.footer-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  border-top: 2rpx solid #efefef;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 28rpx calc(env(safe-area-inset-bottom) + 20rpx);
+  box-sizing: border-box;
+}
+
+.total-price {
+  font-size: 34rpx;
+  color: #111111;
+  font-weight: 600;
+}
+
+.submit-btn {
+  margin: 0;
+  min-width: 250rpx;
+  background: #111111;
+  color: #ffffff;
+  border-radius: 999rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  line-height: 84rpx;
+  padding: 0 30rpx;
+}

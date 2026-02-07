@@ -1,0 +1,52 @@
+<view class="page">
+  <view class="top-tabs">
+    <view
+      class="tab-item {{shippingType === 'hospital' ? 'is-active' : ''}}"
+      data-type="hospital"
+      bindtap="onSwitchType"
+    >
+      医院发货
+    </view>
+    <view
+      class="tab-item {{shippingType === 'pickup' ? 'is-active' : ''}}"
+      data-type="pickup"
+      bindtap="onSwitchType"
+    >
+      到店自取
+    </view>
+  </view>
+
+  <view class="form-card">
+    <view class="module-title">加料选择</view>
+    <checkbox-group class="addon-group" bindchange="onAddonChange">
+      <label
+        class="addon-item {{selectedAddonsMap[item.value] ? 'is-selected' : ''}}"
+        wx:for="{{addons}}"
+        wx:key="value"
+      >
+        <checkbox value="{{item.value}}" checked="{{selectedAddonsMap[item.value]}}" color="#111111" />
+        <view class="addon-texts">
+          <text class="addon-name">{{item.label}}</text>
+          <text class="addon-price">{{item.priceText}}</text>
+        </view>
+      </label>
+    </checkbox-group>
+  </view>
+
+  <view class="form-card">
+    <view class="module-title">联系方式</view>
+    <input
+      class="phone-input"
+      type="number"
+      maxlength="11"
+      placeholder="请输入联系电话（必填）"
+      bindinput="onPhoneInput"
+      value="{{phone}}"
+    />
+  </view>
+
+  <view class="footer-bar">
+    <view class="total-price">预计总价：￥{{totalPrice}}</view>
+    <button class="submit-btn" bindtap="onSubmit">提交订单</button>
+  </view>
+</view>
