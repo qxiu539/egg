@@ -2,7 +2,7 @@ Page({
   data: {
     basePrice: 5,
     totalPrice: '5.00',
-    shippingType: 'hospital',
+    shippingType: 'pickup',
     phone: '',
     addons: [
       { label: '加里脊', value: 'tenderloin', price: 2, priceText: '+￥2', icon: '🥩' },
