@@ -1,40 +1,52 @@
 <view class="page">
-  <view class="top-tabs">
-    <view
-      class="tab-item {{shippingType === 'hospital' ? 'is-active' : ''}}"
-      data-type="hospital"
-      bindtap="onSwitchType"
-    >
-      医院发货
-    </view>
-    <view
-      class="tab-item {{shippingType === 'pickup' ? 'is-active' : ''}}"
-      data-type="pickup"
-      bindtap="onSwitchType"
-    >
-      到店自取
+  <image
+    class="hero-image"
+    mode="aspectFill"
+    src="https://dummyimage.com/1200x560/ffe7a3/8b4513&text=%E7%8E%B0%E7%83%A4%E8%9B%8B%E9%A5%BC"
+  />
+
+  <view class="switch-wrap">
+    <view class="switch-tab">
+      <view
+        class="switch-item {{shippingType === 'hospital' ? 'is-active' : ''}}"
+        data-type="hospital"
+        bindtap="onSwitchType"
+      >
+        医院发货
+      </view>
+      <view
+        class="switch-item {{shippingType === 'pickup' ? 'is-active' : ''}}"
+        data-type="pickup"
+        bindtap="onSwitchType"
+      >
+        到店自取
+      </view>
     </view>
   </view>
 
-  <view class="form-card">
-    <view class="module-title">加料选择</view>
-    <checkbox-group class="addon-group" bindchange="onAddonChange">
+  <view class="order-card">
+    <view class="section-title">加料选择</view>
+    <checkbox-group class="addon-grid" bindchange="onAddonChange">
       <label
-        class="addon-item {{selectedAddonsMap[item.value] ? 'is-selected' : ''}}"
+        class="addon-pill {{selectedAddonsMap[item.value] ? 'is-selected' : ''}}"
         wx:for="{{addons}}"
         wx:key="value"
       >
-        <checkbox value="{{item.value}}" checked="{{selectedAddonsMap[item.value]}}" color="#111111" />
-        <view class="addon-texts">
-          <text class="addon-name">{{item.label}}</text>
-          <text class="addon-price">{{item.priceText}}</text>
+        <checkbox class="native-checkbox" value="{{item.value}}" checked="{{selectedAddonsMap[item.value]}}" />
+        <view class="addon-content">
+          <text class="addon-icon">{{item.icon}}</text>
+          <view class="addon-texts">
+            <text class="addon-name">{{item.label}}</text>
+            <text class="addon-price">{{item.priceText}}</text>
+          </view>
+          <text class="addon-check">{{selectedAddonsMap[item.value] ? '✓' : ''}}</text>
         </view>
       </label>
     </checkbox-group>
   </view>
 
-  <view class="form-card">
-    <view class="module-title">联系方式</view>
+  <view class="order-card">
+    <view class="section-title">联系方式</view>
     <input
       class="phone-input"
       type="number"
@@ -46,7 +58,10 @@
   </view>
 
   <view class="footer-bar">
-    <view class="total-price">预计总价：￥{{totalPrice}}</view>
-    <button class="submit-btn" bindtap="onSubmit">提交订单</button>
+    <view class="price-wrap">
+      <text class="price-label">预计总价</text>
+      <text class="price-value">￥{{totalPrice}}</text>
+    </view>
+    <button class="order-btn" bindtap="onSubmit">立即下单</button>
   </view>
 </view>

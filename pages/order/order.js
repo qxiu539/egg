@@ -5,11 +5,11 @@ Page({
     shippingType: 'hospital',
     phone: '',
     addons: [
-      { label: '加里脊', value: 'tenderloin', price: 2, priceText: '+￥2' },
-      { label: '加火腿', value: 'ham', price: 2, priceText: '+￥2' },
-      { label: '加芝士', value: 'cheese', price: 3, priceText: '+￥3' },
-      { label: '多放辣', value: 'extraSpicy', price: 0, priceText: '+￥0' },
-      { label: '不要葱', value: 'noScallion', price: 0, priceText: '+￥0' }
+      { label: '加里脊', value: 'tenderloin', price: 2, priceText: '+￥2', icon: '🥩' },
+      { label: '加火腿', value: 'ham', price: 2, priceText: '+￥2', icon: '🍖' },
+      { label: '加芝士', value: 'cheese', price: 3, priceText: '+￥3', icon: '🧀' },
+      { label: '多放辣', value: 'extraSpicy', price: 0, priceText: '+￥0', icon: '🌶️' },
+      { label: '不要葱', value: 'noScallion', price: 0, priceText: '+￥0', icon: '🧅' }
     ],
     selectedAddons: [],
     selectedAddonsMap: {}
