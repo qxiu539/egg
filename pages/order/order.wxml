@@ -1,0 +1,76 @@
+<view class="page">
+  <image
+    class="hero-image"
+    mode="aspectFill"
+    src="https://dummyimage.com/1200x560/ffe7a3/8b4513&text=%E7%8E%B0%E7%83%A4%E8%9B%8B%E9%A5%BC"
+  />
+
+  <view class="header-info">
+    <view class="store-info">
+      <text class="store-name">蛋饼工坊 · 现烤出餐</text>
+      <view class="store-location-row">
+        <text class="store-location-icon">📍</text>
+        <text class="store-location-text">医院东门 200 米 · 预计 15 分钟可取</text>
+      </view>
+    </view>
+
+    <view class="delivery-switch">
+      <view class="switch-slider {{shippingType === 'delivery' ? 'to-right' : ''}}"></view>
+      <view
+        class="delivery-option {{shippingType === 'pickup' ? 'is-active' : ''}}"
+        data-type="pickup"
+        bindtap="onSwitchType"
+      >
+        自取
+      </view>
+      <view
+        class="delivery-option {{shippingType === 'delivery' ? 'is-active' : ''}}"
+        data-type="delivery"
+        bindtap="onSwitchType"
+      >
+        配送
+      </view>
+    </view>
+  </view>
+
+  <view class="order-card">
+    <view class="section-title">加料选择</view>
+    <checkbox-group class="addon-grid" bindchange="onAddonChange">
+      <label
+        class="addon-pill {{selectedAddonsMap[item.value] ? 'is-selected' : ''}}"
+        wx:for="{{addons}}"
+        wx:key="value"
+      >
+        <checkbox class="native-checkbox" value="{{item.value}}" checked="{{selectedAddonsMap[item.value]}}" />
+        <view class="addon-content">
+          <text class="addon-icon">{{item.icon}}</text>
+          <view class="addon-texts">
+            <text class="addon-name">{{item.label}}</text>
+            <text class="addon-price">{{item.priceText}}</text>
+          </view>
+          <text class="addon-check">{{selectedAddonsMap[item.value] ? '✓' : ''}}</text>
+        </view>
+      </label>
+    </checkbox-group>
+  </view>
+
+  <view class="order-card">
+    <view class="section-title">联系方式</view>
+    <input
+      class="phone-input"
+      type="number"
+      maxlength="11"
+      placeholder="请输入联系电话（必填）"
+      bindinput="onPhoneInput"
+      value="{{phone}}"
+    />
+  </view>
+
+  <view class="footer-bar">
+    <view class="price-wrap">
+      <text class="price-label">预计总价</text>
+      <text class="price-value">￥{{totalPrice}}</text>
+    </view>
+    <button class="order-btn" bindtap="onSubmit">立即下单</button>
+  </view>
+</view>
